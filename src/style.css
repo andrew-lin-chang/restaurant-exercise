@@ -28,11 +28,15 @@ body {
 
 .navbar {
     display: flex;
-    justify-content: start;
     align-items: center;
     gap: 1rem;
-    width: 100%;
+    max-width: 90%;
     height: 80px;
+    padding: 0 100px;
+    position: sticky;
+    top: 0;
+    background-color: rgba(255, 255, 255, .70);  
+    backdrop-filter: blur(10px);
 }
 
 .navbar > .tabs > button, .navbar, .nav-btns > button {
@@ -64,7 +68,7 @@ body {
 }
 
 .hero {
-    height: 50vh;
+    height: 150vh;
     background: var(--yellow);
     display: flex;
     align-items: center;
