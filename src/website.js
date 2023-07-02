@@ -1,5 +1,7 @@
 import './style.css'
 import { Home } from './home';
+import { Menu } from './menu';
+import { About } from './about';
 
 export const Initialize = function() {
     const content = document.querySelector('#content');
@@ -15,17 +17,20 @@ export const Initialize = function() {
     const order = document.createElement('button');
     const navBtns = document.createElement('div');
 
+    content.appendChild(navbar);
+    content.appendChild(wrapper);
+
+    wrapper.classList.add('wrapper');
+    navbar.classList.add('navbar');
+    tabs.classList.add('tabs');
+    navBtns.classList.add('nav-btns');
+
     home.textContent = 'Home';
     menu.textContent = 'Menu';
     about.textContent = 'About';
     title.textContent = 'Just Bread.';
     login.textContent = 'Login';
     order.textContent = 'Order';
-
-    wrapper.classList.add('wrapper');
-    navbar.classList.add('navbar');
-    tabs.classList.add('tabs');
-    navBtns.classList.add('nav-btns');
 
     tabs.appendChild(home);
     tabs.appendChild(menu);
@@ -37,8 +42,22 @@ export const Initialize = function() {
     navbar.appendChild(tabs);
     navbar.appendChild(navBtns);
 
-    wrapper.appendChild(Home());
-    content.appendChild(navbar);
-    content.appendChild(wrapper);
 
+    home.addEventListener('click', () => {
+        loadScreen(Home());
+    });
+    menu.addEventListener('click', () => {
+        loadScreen(Menu());
+    });
+    about.addEventListener('click', () => {
+        loadScreen(About());
+    })
+
+    wrapper.appendChild(Home());
+}
+
+const loadScreen = function(screen) {
+    const wrapper = document.querySelector('.wrapper');
+    wrapper.innerHTML = '';
+    wrapper.appendChild(screen);
 }
