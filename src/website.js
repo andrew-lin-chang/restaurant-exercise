@@ -15,6 +15,8 @@ export const Initialize = function() {
 
     const login = document.createElement('button');
     const order = document.createElement('button');
+    order.classList.add('yellow-btn');
+    login.classList.add('yellow-btn');
     const navBtns = document.createElement('div');
 
     content.appendChild(navbar);
