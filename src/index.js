@@ -1,2 +1,1 @@
-alert('start');
-console.log('tweaking');
+console.log("Hello World!");
