@@ -68,7 +68,7 @@ body {
 }
 
 .hero {
-    height: 150vh;
+    height: 80vh;
     /* background: var(--yellow); */
     display: flex;
     align-items: center;
@@ -77,6 +77,23 @@ body {
         font-family: 'Tanker-Regular';
         font-size: 8rem;
         margin: 0;
-        width: 60%;
+        max-width: 60%;
+        position: relative;
+        z-index: 2;
     }
+
+    > img {
+        position: absolute;
+        z-index: auto;
+        transform: translate(600px);
+    }
+}
+
+.highlight {
+    background: var(--yellow);
+    height: 8rem;
+    width: 550px;
+    position: absolute;
+    transform: translate(30px, 120px);
+
 }
